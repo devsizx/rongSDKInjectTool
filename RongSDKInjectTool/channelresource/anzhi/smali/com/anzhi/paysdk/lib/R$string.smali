@@ -15,8 +15,6 @@
 
 
 # static fields
-.field public static final app_name:I = 0x7f080000
-
 .field public static final azuc_find_new_version:I = 0x7f080001
 
 .field public static final azuc_find_new_version_game:I = 0x7f080002

@@ -1,11 +1,11 @@
 .class Lcom/rongmzw/frame/sdk/api/RongSdkController$4;
-.super Lcom/muzhiwan/sdk/core/callback/MzwStaPayCallback;
+.super Lcom/muzhiwan/sdk/core/callback/MzwPayCallback;
 .source "RongSdkController.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/rongmzw/frame/sdk/api/RongSdkController;->callStaPay()V
+    value = Lcom/rongmzw/frame/sdk/api/RongSdkController;->callPay(Lcom/rongmzw/frame/sdk/domain/local/RongOrder;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,34 +24,29 @@
     .param p1, "this$0"    # Lcom/rongmzw/frame/sdk/api/RongSdkController;
 
     .prologue
-    .line 94
+    .line 203
     iput-object p1, p0, Lcom/rongmzw/frame/sdk/api/RongSdkController$4;->this$0:Lcom/rongmzw/frame/sdk/api/RongSdkController;
 
-    invoke-direct {p0}, Lcom/muzhiwan/sdk/core/callback/MzwStaPayCallback;-><init>()V
+    invoke-direct {p0}, Lcom/muzhiwan/sdk/core/callback/MzwPayCallback;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onResult(ILjava/lang/String;)V
-    .locals 2
-    .param p1, "code"    # I
-    .param p2, "msg"    # Ljava/lang/String;
+.method public onResult(ILcom/muzhiwan/sdk/service/MzwOrder;)V
+    .locals 1
+    .param p1, "i"    # I
+    .param p2, "mzwOrder"    # Lcom/muzhiwan/sdk/service/MzwOrder;
 
     .prologue
-    .line 97
-    iget-object v0, p0, Lcom/rongmzw/frame/sdk/api/RongSdkController$4;->this$0:Lcom/rongmzw/frame/sdk/api/RongSdkController;
-
-    # getter for: Lcom/rongmzw/frame/sdk/api/RongSdkController;->rongCallback:Lcom/rongmzw/frame/sdk/callback/RongCallback;
-    invoke-static {v0}, Lcom/rongmzw/frame/sdk/api/RongSdkController;->access$200(Lcom/rongmzw/frame/sdk/api/RongSdkController;)Lcom/rongmzw/frame/sdk/callback/RongCallback;
+    .line 206
+    invoke-virtual {p2}, Lcom/muzhiwan/sdk/service/MzwOrder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v1, 0x3
+    invoke-static {p1, v0}, Lcom/rongmzw/frame/sdk/callback/RongCallBackUtils;->payCallBack(ILjava/lang/String;)V
 
-    invoke-interface {v0, v1, p1, p2}, Lcom/rongmzw/frame/sdk/callback/RongCallback;->onResult(IILjava/lang/String;)V
-
-    .line 98
+    .line 207
     return-void
 .end method

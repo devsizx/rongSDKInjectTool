@@ -3,14 +3,6 @@
 .source "R.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/rongmzw/frame/sdk/R$string;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0

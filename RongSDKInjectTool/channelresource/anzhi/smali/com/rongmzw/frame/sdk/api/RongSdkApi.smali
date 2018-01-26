@@ -34,11 +34,11 @@
 .method public abstract callOnStopInvoked()V
 .end method
 
-.method public abstract callPay(Lcom/rongmzw/frame/sdk/domain/RongOrder;)V
+.method public abstract callPay(Lcom/rongmzw/frame/sdk/domain/local/RongOrder;)V
 .end method
 
 .method public abstract callStaPay()V
 .end method
 
-.method public abstract callSubGameInfo(Lcom/rongmzw/frame/sdk/domain/RongGameInfo;)V
+.method public abstract callSubGameInfo(Lcom/rongmzw/frame/sdk/domain/local/RongGameInfo;)V
 .end method
